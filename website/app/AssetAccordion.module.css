@@ -1,0 +1,12 @@
+.tableName {
+  width: rem(800px);
+}
+.tableAmount {
+  width: rem(600px);
+}
+.tableValue {
+  width: rem(600px);
+}
+.editAssetAmount:hover {
+  cursor: pointer;
+}
