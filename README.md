@@ -1,4 +1,6 @@
 # Moneytracker
+Find it [here!](https://moneytracker.weiyuan.dev)
+
 Moneytracker is a dead-simple way to keep track of the fiat or crypto assets you have across different entities.
 Currently, moneytracker is in early development, and only supports front-end functionality. This means that all behaviour
 is driven from localstorage, and no data is sent to or persisted any server.
