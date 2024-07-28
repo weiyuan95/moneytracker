@@ -1,5 +1,5 @@
-import { ExchangeRateClient } from './ExchangeRateClient';
 import { wait } from '../utils/Wait';
+import { ExchangeRateClient } from './ExchangeRateClient';
 
 export class CoinGateClient implements ExchangeRateClient {
   private baseUrl = 'https://api.coingate.com/v2';

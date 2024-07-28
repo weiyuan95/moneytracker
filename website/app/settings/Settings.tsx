@@ -1,9 +1,10 @@
 'use client';
-import { ReactElement, useEffect, useState } from 'react';
-import { Box, Button, Divider, LoadingOverlay, Text, Textarea, Title, Flex, Loader } from '@mantine/core';
-import { useHoldings } from '../../store/HoldingsProvider';
-import { useRouter } from 'next/navigation';
+import { Box, Button, Divider, Flex,LoadingOverlay, Text, Textarea, Title } from '@mantine/core';
 import { notifications } from '@mantine/notifications';
+import { useRouter } from 'next/navigation';
+import { ReactElement, useEffect, useState } from 'react';
+
+import { useHoldings } from '../../store/HoldingsProvider';
 
 export function Settings(): ReactElement {
   const { clearAllHoldings, isLoading: isHoldingsLoading, getHoldingsDto, setHoldingsByDto } = useHoldings();

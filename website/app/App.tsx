@@ -1,8 +1,9 @@
 'use client';
-import { useAppCurrency } from './AppCurrencyProvider';
-import { ReactNode } from 'react';
-import { HoldingsProvider } from '../store/HoldingsProvider';
 import { Container } from '@mantine/core';
+import { ReactNode } from 'react';
+
+import { HoldingsProvider } from '../store/HoldingsProvider';
+import { useAppCurrency } from './AppCurrencyProvider';
 import { AppHeader } from './AppHeader';
 
 type Props = {

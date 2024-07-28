@@ -1,9 +1,10 @@
 'use client';
-import React, { ReactElement, useState } from 'react';
-import { useForm } from '@mantine/form';
 import { Box, Button, Group, Loader, LoadingOverlay, NumberInput, Select, Stack, TextInput } from '@mantine/core';
-import { useRouter } from 'next/navigation';
+import { useForm } from '@mantine/form';
 import { notifications } from '@mantine/notifications';
+import { useRouter } from 'next/navigation';
+import React, { ReactElement, useState } from 'react';
+
 import { CRYPTO_CURRENCY_INFO, FIAT_CURRENCY_INFO, getCurrencyDecimals } from '../../currencies/CurrencyInfo';
 import { TTL_DURATION_MS, useHoldings } from '../../store/HoldingsProvider';
 

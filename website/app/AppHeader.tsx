@@ -1,10 +1,11 @@
 'use client';
 import { Container, Flex, Tabs } from '@mantine/core';
-import classes from './AppHeader.module.css';
-import { SchemeToggle } from './SchemeToggle';
 import { usePathname, useRouter } from 'next/navigation';
+
+import classes from './AppHeader.module.css';
 import { CurrencyToggle } from './CurrencyToggle';
 import { PrivacyToggle } from './PrivacyToggle';
+import { SchemeToggle } from './SchemeToggle';
 
 const links = [
   { link: '/', label: 'Holdings' },

@@ -1,10 +1,11 @@
 'use client';
-import { ReactElement, useState } from 'react';
 import { Button, Popover, Select, Skeleton } from '@mantine/core';
-import { useAppCurrency } from './AppCurrencyProvider';
+import { useDisclosure } from '@mantine/hooks';
+import { ReactElement, useState } from 'react';
+
 import { CRYPTO_CURRENCY_INFO, FIAT_CURRENCY_INFO } from '../currencies/CurrencyInfo';
 import { useHoldings } from '../store/HoldingsProvider';
-import { useDisclosure } from '@mantine/hooks';
+import { useAppCurrency } from './AppCurrencyProvider';
 
 export function CurrencyToggle(): ReactElement {
   const [loading, setLoading] = useState(false);

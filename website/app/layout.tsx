@@ -2,10 +2,12 @@
 // All packages except `@mantine/hooks` require styles imports
 import '@mantine/core/styles.css';
 import '@mantine/notifications/styles.css';
+
 import { ColorSchemeScript, createTheme, MantineProvider } from '@mantine/core';
 import { Notifications } from '@mantine/notifications';
-import { AppCurrencyProvider } from './AppCurrencyProvider';
+
 import { App } from './App';
+import { AppCurrencyProvider } from './AppCurrencyProvider';
 import { AppPrivacyProvider } from './AppPrivacyProvider';
 
 const theme = createTheme({

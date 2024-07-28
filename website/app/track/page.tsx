@@ -1,5 +1,6 @@
-import { ReactElement } from 'react';
 import { Flex } from '@mantine/core';
+import { ReactElement } from 'react';
+
 import { TrackForm } from './TrackForm';
 
 type SearchParams = {

@@ -1,13 +1,14 @@
 'use client';
-import { ReactElement, useState } from 'react';
-import { Accordion, Group, Title, Text, Table, Button, Flex, Stack, Grid, ActionIcon, Loader } from '@mantine/core';
-import classes from './AssetAccordion.module.css';
-import Link from 'next/link';
+import { Accordion, ActionIcon, Button, Flex, Grid, Group, Loader,Stack, Table, Text, Title } from '@mantine/core';
 import { IconEdit, IconTrash } from '@tabler/icons-react';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { useAppCurrency } from './AppCurrencyProvider';
+import { ReactElement, useState } from 'react';
+
 import { useHoldings } from '../store/HoldingsProvider';
+import { useAppCurrency } from './AppCurrencyProvider';
 import { useAppPrivacy } from './AppPrivacyProvider';
+import classes from './AssetAccordion.module.css';
 
 export function AssetAccordion(): ReactElement {
   const router = useRouter();

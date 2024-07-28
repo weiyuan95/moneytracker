@@ -1,10 +1,11 @@
-import { HoldingsStore } from './HoldingsStore';
+import { notifications } from '@mantine/notifications';
 import { createContext, ReactNode, useCallback, useContext, useEffect, useState } from 'react';
-import { Asset, AssetDto, Holdings, HoldingsData, HoldingsDto } from '../Holdings';
+
 import { CoinGateClient } from '../currencies/CoinGateClient';
 import { Currency } from '../currencies/Currency';
-import { notifications } from '@mantine/notifications';
 import { getCurrencyDecimals } from '../currencies/CurrencyInfo';
+import { Asset, AssetDto, Holdings, HoldingsData, HoldingsDto } from '../Holdings';
+import { HoldingsStore } from './HoldingsStore';
 
 export const TTL_DURATION_MS = 1000 * 60 * 30; // 30 minutes
 

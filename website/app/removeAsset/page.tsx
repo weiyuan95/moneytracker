@@ -1,6 +1,7 @@
-import { ReactElement } from 'react';
-import { notFound } from 'next/navigation';
 import { Container, Flex, Title } from '@mantine/core';
+import { notFound } from 'next/navigation';
+import { ReactElement } from 'react';
+
 import { BackButton } from '../removeHolding/BackButton';
 import { RemoveAssetButton } from './RemoveAssetButton';
 

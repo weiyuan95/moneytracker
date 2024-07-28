@@ -1,8 +1,9 @@
-import { ReactElement } from 'react';
-import { notFound } from 'next/navigation';
 import { Container, Flex, Title } from '@mantine/core';
-import { RemoveHoldingButton } from './RemoveHoldingButton';
+import { notFound } from 'next/navigation';
+import { ReactElement } from 'react';
+
 import { BackButton } from './BackButton';
+import { RemoveHoldingButton } from './RemoveHoldingButton';
 
 type SearchParams = {
   holdingEntity?: string;

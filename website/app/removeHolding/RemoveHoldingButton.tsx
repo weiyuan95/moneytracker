@@ -1,8 +1,9 @@
 'use client';
 import { Button, rem } from '@mantine/core';
-import { ReactElement } from 'react';
 import { notifications } from '@mantine/notifications';
 import { useRouter } from 'next/navigation';
+import { ReactElement } from 'react';
+
 import { useHoldings } from '../../store/HoldingsProvider';
 
 type Props = {

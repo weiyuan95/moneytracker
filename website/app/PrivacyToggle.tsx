@@ -1,7 +1,8 @@
-import { IconEyeDollar, IconEyeOff } from '@tabler/icons-react';
 import { ActionIcon, Loader } from '@mantine/core';
-import { useAppPrivacy } from './AppPrivacyProvider';
+import { IconEyeDollar, IconEyeOff } from '@tabler/icons-react';
 import { ReactNode, useCallback } from 'react';
+
+import { useAppPrivacy } from './AppPrivacyProvider';
 
 export function PrivacyToggle() {
   const { isPrivate, setIsPrivate, isLoading } = useAppPrivacy();
