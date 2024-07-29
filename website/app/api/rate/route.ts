@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+
 import { CoinGateClient } from '../../../currencies/CoinGateClient';
 
 type Rate = {
