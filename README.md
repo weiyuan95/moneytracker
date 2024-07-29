@@ -3,7 +3,7 @@ Find it [here!](https://moneytracker.weiyuan.dev)
 
 Moneytracker is a dead-simple way to keep track of the fiat or crypto assets you have across different entities.
 Currently, moneytracker is in early development, and only supports front-end functionality. This means that all behaviour
-is driven from localstorage, and no data is sent to or persisted any server.
+is driven from localstorage, and no data is sent to or persisted on any server.
 
 # Running the app
 ```shell
@@ -12,9 +12,6 @@ pnpm i
 cd website
 pnpm dev
 ```
-If you're trying to use the app locally, you'll need to find a way to circumvent CORS restrictions.
-One possibility if you're on Chrome is this [extension](https://chromewebstore.google.com/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf),
-but use it at your own risk.
 
 # Using the app
 1. Add a holding entity (literally 'what' holds your money). This can be anything from a bank account to a crypto wallet
