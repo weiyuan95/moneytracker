@@ -1,7 +1,6 @@
 import { notifications } from '@mantine/notifications';
 import { createContext, ReactNode, useCallback, useContext, useEffect, useState } from 'react';
 
-import { CoinGateClient } from '../currencies/CoinGateClient';
 import { Currency } from '../currencies/Currency';
 import { getCurrencyDecimals } from '../currencies/CurrencyInfo';
 import { Asset, AssetDto, Holdings, HoldingsData, HoldingsDto } from '../Holdings';
@@ -270,7 +269,6 @@ async function getHoldingsWithUpdatedCacheInfo(holdings: HoldingsDto, symbol: st
   // Keep a consistent time for all the assets
   const currentTime = Date.now();
 
-  const client = new CoinGateClient();
   for (const asset of assetData) {
     // The fiat information that was saved previously
     const { fiatCache } = asset;
@@ -279,7 +277,8 @@ async function getHoldingsWithUpdatedCacheInfo(holdings: HoldingsDto, symbol: st
     // or if the cache has expired
     if (fiatCache.symbol !== symbol || currentTime > fiatCache.ttl) {
       // Change from the previous cached symbol for the asset to the current symbol used by the app
-      const conversionRate = await client.getExchangeRate(asset.symbol, symbol);
+      const conversionRate = await (await fetch(`/api/rate?from=${asset.symbol}&to=${symbol}`)).json();
+
       const assetCurrency = new Currency({
         amount: asset.amount,
         symbol: asset.symbol,
