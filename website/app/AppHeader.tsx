@@ -1,12 +1,12 @@
 'use client';
 import { Burger, Container, Drawer, Flex, Tabs } from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
 import { usePathname, useRouter } from 'next/navigation';
 
 import classes from './AppHeader.module.css';
 import { CurrencyToggle } from './CurrencyToggle';
 import { PrivacyToggle } from './PrivacyToggle';
 import { SchemeToggle } from './SchemeToggle';
-import { useDisclosure } from '@mantine/hooks';
 
 const links = [
   { link: '/', label: 'Holdings' },
