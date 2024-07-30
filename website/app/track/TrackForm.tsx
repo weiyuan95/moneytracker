@@ -47,7 +47,7 @@ export function TrackForm({ holdingEntity, assetAmount, assetName, assetSymbol, 
   return (
     // miw -> min width
     // documented here: https://mantine.dev/styles/style-props/
-    <Box miw={500} pos="relative">
+    <Box miw={{ sm: 400, md: 500 }} pos="relative">
       <LoadingOverlay visible={formIsSubmitting} zIndex={1000} />
       <form
         onSubmit={form.onSubmit(async (values) => {
