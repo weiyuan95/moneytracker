@@ -1,5 +1,5 @@
 'use client';
-import { Accordion, ActionIcon, Button, Flex, Grid, Group, Loader,Stack, Table, Text, Title } from '@mantine/core';
+import { Accordion, ActionIcon, Button, Flex, Grid, Group, Loader, Stack, Table, Text, Title } from '@mantine/core';
 import { IconEdit, IconTrash } from '@tabler/icons-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -150,8 +150,11 @@ export function AssetAccordion(): ReactElement {
         </Accordion>
         <Grid>
           <Grid.Col span={4} offset={4}>
-            <Button component={Link} href={createTrackPageLink()} size="sm" fullWidth>
+            <Button component={Link} href={createTrackPageLink()} size="sm" fullWidth visibleFrom="sm">
               Add Holding Entity
+            </Button>
+            <Button component={Link} href={createTrackPageLink()} size="sm" fullWidth hiddenFrom="sm">
+              Add
             </Button>
           </Grid.Col>
         </Grid>
