@@ -12,6 +12,7 @@ const links = [
   { link: '/', label: 'Holdings' },
   { link: '/track', label: 'Track' },
   { link: '/settings', label: 'Settings' },
+  { link: 'https://blog.weiyuan.dev/posts/about-moneytracker', label: 'About' },
 ];
 
 export function AppHeader() {
