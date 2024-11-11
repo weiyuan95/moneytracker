@@ -273,9 +273,8 @@ async function getHoldingsWithUpdatedCacheInfo(holdings: HoldingsDto, symbol: st
     // The fiat information that was saved previously
     const { fiatCache } = asset;
 
-    // We only update the fiat cache if the previously cached symbol has changed which requires an update,
-    // or if the cache has expired
-    if (fiatCache.symbol !== symbol || currentTime > fiatCache.ttl) {
+    // We only update the fiat cache if the cache has expired
+    if (currentTime > fiatCache.ttl) {
       // Change from the previous cached symbol for the asset to the current symbol used by the app
       const conversionRate = await (await fetch(`/api/rate?from=${asset.symbol}&to=${symbol}`)).json();
 

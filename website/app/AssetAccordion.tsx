@@ -1,9 +1,9 @@
 'use client';
 import { Accordion, ActionIcon, Button, Flex, Grid, Group, Loader, Stack, Table, Text, Title } from '@mantine/core';
-import { IconEdit, IconTrash } from '@tabler/icons-react';
+import { IconEdit, IconRefresh, IconTrash } from '@tabler/icons-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { ReactElement, useState } from 'react';
+import { ReactElement, useEffect, useState } from 'react';
 
 import { useHoldings } from '../store/HoldingsProvider';
 import { useAppCurrency } from './AppCurrencyProvider';
@@ -13,10 +13,18 @@ import classes from './AssetAccordion.module.css';
 export function AssetAccordion(): ReactElement {
   const router = useRouter();
   const [selectedHoldingEntities, setSelectedHoldingEntities] = useState<string[]>([]);
-  const { getHoldings, isLoading: isHoldingsLoading, isErrored: isHoldingsErrored } = useHoldings();
+  const { getHoldings, updateFiatCache, isLoading: isHoldingsLoading, isErrored: isHoldingsErrored } = useHoldings();
   const { holdings, totalValue: holdingsTotalValue } = getHoldings();
   const { appCurrencySymbol, isLoading: isAppCurrencyLoading } = useAppCurrency();
   const { isPrivate } = useAppPrivacy();
+  const [isRefreshed, setIsRefreshed] = useState(false);
+
+  useEffect(() => {
+    if (isRefreshed) {
+      void updateFiatCache(appCurrencySymbol);
+      setIsRefreshed(false);
+    }
+  }, [isRefreshed]);
 
   // Ideally we don't have loading state like this, but since we don't have a server,
   // everything must be done on the front end.
@@ -149,12 +157,23 @@ export function AssetAccordion(): ReactElement {
           })}
         </Accordion>
         <Grid>
-          <Grid.Col span={4} offset={4}>
+          <Grid.Col span={4} offset={2}>
             <Button component={Link} href={createTrackPageLink()} size="sm" fullWidth visibleFrom="sm">
               Add Holding Entity
             </Button>
             <Button component={Link} href={createTrackPageLink()} size="sm" fullWidth hiddenFrom="sm">
               Add
+            </Button>
+          </Grid.Col>
+          <Grid.Col span={4}>
+            <Button
+              onClick={() => {
+                setIsRefreshed(true);
+              }}
+              size="sm"
+              fullWidth
+            >
+              <IconRefresh />
             </Button>
           </Grid.Col>
         </Grid>
